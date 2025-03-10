@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+p{
+    text-align: justify;
+    font-size: 25px;
+}
+:root{
+    --ap-primary: #fe6b00;
+    --ap-secondary: #1d2945;
+    --ddi-primary: #fdb71a;
+    --ddi-secondary: rgb(39, 51, 59);
+}
+body{
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "content"
+    "footer";
+    background-color: gainsboro;
+}
+.bold-text{
+    font-weight: bold;
+}
+
+/*#region Menubar*/
+#menubar{
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    background-color: var(--ap-secondary);
+    justify-items: center;
+    z-index: 10;
+}
+
+#navbar a{
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: var(--ap-secondary);
+    
+}
+#navbar a:hover{
+    background-color: var(--ddi-primary);
+}
+
+#navbar a.active{
+    background-color: var(--ap-primary);
+}
+/*#endregion*/
+
+#content{
+    margin:0 5vh;
+}
+
+/*#region TrangChu*/
+#trangchu-head{
+    position: relative;
+    height: 20vh;
+    width: 100%;
+}
+
+#trangchu-head img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+#trangchu-head p{
+    height: 3vh;
+    color: white;
+    font-size: 20px;
+    padding: 0 15vw 0;
+    z-index: -1;
+}
+#trangchu-head p:first-of-type{
+    font-size: 30px;
+    padding-bottom: 3vh;
+    padding-top: 5vh;
+}
+
+#trangchu-content{
+    display: grid;
+    grid-template-areas: 
+    "heading heading"
+    "video text";
+}
+
+.trangchu-content-margin{
+    margin: 2vh;
+}
+
+#trangchu-content #heading{
+    grid-area: heading;
+    font-size: 35px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+#trangchu-content video{
+    grid-area: video;
+    height: 45vh;
+    margin-left: 0;
+}
+
+#trangchu-content #text{
+    grid-area: text;
+    text-align: justify;
+    font-size: 25px;
+    margin-right: 0;
+}
+/*#endregion*/
+
+/*#region GioiThieu*/
+#gioithieu{
+    width: 100%;
+}
+
+#gioithieu-ap{
+    margin-top: 2vh;
+    height: 90vh;
+}
+
+#gioithieu-ap h1{
+    position: relative;
+    font-size: 45px;
+    margin-bottom: 1vh;
+}
+
+#gioithieu-ap h1:after{
+    content: "";
+    position: absolute;
+    border-top: 3px solid var(--ap-primary);
+    left: 2%;
+    bottom: 0;
+    width: 7%;
+    height: 0px;
+}
+
+#gioithieu-ap-text{
+    font-size: 25px;
+}
+
+#gioithieu-ap-content{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    grid-template-rows: repeat(12, minmax(0,1fr));
+    margin-top: 2vh;
+    height: 75%;
+}
+
+#gioithieu-ap-content div{
+    height: 100%;
+}
+
+#gioithieu-ap-content-topleft{
+    grid-column: 1;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: repeat(10,minmax(0,1fr));
+    font-size: 25px;
+    align-items: center;
+    width: 100%;
+}
+#gioithieu-ap-content-topright {
+    grid-column: 2;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    align-items: center;
+}
+
+#gioithieu-ap-content .number {
+    grid-column: 1/4;
+    width: 100%;
+    font-size: 72px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--ap-primary);
+}
+
+#gioithieu-ap-content .description {
+    grid-column: 4/10;
+}
+
+#gioithieu-ap-content-bottomleft {
+    grid-column: 1;
+    grid-row: 3/12;
+    display: grid;
+    padding-top: 2vh;
+    align-items: center;
+}
+#gioithieu-ap-content-bottomright{
+    grid-column: 2;
+    grid-row: 3/12;
+    position: relative;
+    justify-content: center;
+    justify-items: center;
+}
+
+#gioithieu-ap-content-bottomright img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+/*#endregion*/
+
+/*#region iPad*/
+@media screen and (max-width: 960px) {
+    #navbar a {
+        padding: 10px 12px;
+        font-size: 11px;
+    }
+}
+/*#endregion*/
+
+/*#region Mobile*/
+@media screen and (max-width: 640px) {
+    #navbar a {
+        padding: 7px 8px;
+        font-size: 8px;
+    }
+}
+/*#endregion*/
