@@ -239,6 +239,32 @@ body{
 
 /*#endregion*/
 
+/*#region HopTac*/
+#hoptac{
+    height: 80vh;
+    width: 100%;
+    background-size: cover;
+    background: url("../img/hoptac-1.png") no-repeat center;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+#hoptac-heading h1{
+    position: relative;
+    font-size: 75px;
+    margin-bottom: 2vh;
+}
+#hoptac-heading h1::after{
+    content: "";
+    position: absolute;
+    border-top: 3px solid var(--ap-primary);
+    left: 2%;
+    bottom: 0;
+    width: 7%;
+    height: 0px;
+}
+/*#endregion*/
+
 /*#region iPad*/
 @media screen and (max-width: 960px) {
     #navbar a {
