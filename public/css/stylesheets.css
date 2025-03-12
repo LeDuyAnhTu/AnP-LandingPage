@@ -26,6 +26,29 @@ body{
 .bold-text{
     font-weight: bold;
 }
+.cardcollection{
+    display: flex;
+}
+.card{
+    flex-grow: 1;
+    height: 350px;
+    margin: 10px;
+    padding: 5px 10px;
+    justify-items: center;
+    border-radius: 10px;
+}
+.card .fa,.fa-solid {
+    font-size: 7rem;
+    color: var(--ap-primary);
+}
+.card:hover{
+    background-color: var(--ap-secondary);
+    transition: 0.3s;
+    color: white;
+    .fa,.fa-solid{
+        color: white;
+    }
+}
 
 /*#region Menubar*/
 #menubar{
@@ -64,7 +87,7 @@ body{
 /*#region TrangChu*/
 #trangchu-head{
     position: relative;
-    height: 20vh;
+    height: 200px;
     width: 100%;
 }
 
@@ -91,10 +114,7 @@ body{
 }
 
 #trangchu-content{
-    display: grid;
-    grid-template-areas: 
-    "heading heading"
-    "video text";
+    
 }
 
 .trangchu-content-margin{
@@ -102,23 +122,26 @@ body{
 }
 
 #trangchu-content #heading{
-    grid-area: heading;
     font-size: 35px;
     font-weight: bold;
     width: 100%;
     text-align: center;
+    margin: 10px;
+}
+
+#trangchu .flex{
+    display: flex;
 }
 
 #trangchu-content video{
-    grid-area: video;
-    height: 45vh;
+    flex-grow: 1;
+    width: 45vw;
     margin-left: 0;
 }
 
 #trangchu-content #text{
-    grid-area: text;
+    flex-grow: 1;
     text-align: justify;
-    font-size: 25px;
     margin-right: 0;
 }
 /*#endregion*/
@@ -130,7 +153,7 @@ body{
 
 #gioithieu-ap{
     margin-top: 2vh;
-    height: 90vh;
+    height: 600px;
 }
 
 #gioithieu h1{
@@ -229,7 +252,7 @@ body{
 }
 #gioithieu-spacing{
     margin-top: -20vh;
-    height: 50vh;
+    height: 500px;
     width: 100%;
 }
 #gioithieu-spacing img{
@@ -241,28 +264,42 @@ body{
 
 /*#region HopTac*/
 #hoptac{
-    height: 80vh;
+    position: relative;
+    height: 600px;
     width: 100%;
-    background-size: cover;
-    background: url("../img/hoptac-1.png") no-repeat center;
-    filter: blur(2px);
-    -webkit-filter: blur(2px);
+    margin-bottom: 10vh;
 }
-
+#hoptac-heading img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    z-index: -2;
+}
 #hoptac-heading h1{
     position: relative;
-    font-size: 75px;
-    margin-bottom: 2vh;
+    font-size: 50px;
+    padding-top: 3vh;
+    margin-bottom: 3vh;
+    text-align: center;
 }
 #hoptac-heading h1::after{
     content: "";
     position: absolute;
-    border-top: 3px solid var(--ap-primary);
-    left: 2%;
-    bottom: 0;
+    border-top: 5px solid var(--ap-primary);
+    left: 46.5%;
+    bottom: -10px;
     width: 7%;
     height: 0px;
 }
+#hoptac .heading-text{
+    padding: 0 2vw;
+    text-align: justify;
+}
+
 /*#endregion*/
 
 /*#region iPad*/
